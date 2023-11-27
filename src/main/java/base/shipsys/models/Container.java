@@ -7,7 +7,7 @@ public class Container {
     private final int contWidth = 8;
     private final int contHeight = 8;
 
-    public Container(String contID, int contLength) {
+    public Container(int contID, int contLength) {
         this.contID = contID;
         this.contLength = contLength;
     }

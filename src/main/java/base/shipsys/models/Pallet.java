@@ -8,7 +8,7 @@ public class Pallet {
     private int totalWeight;
     private int totalVol;
 
-    public Pallet(String desc, int unitQuant, int unitValue, int totalWeight, int totalVol) {
+    public Pallet(String desc, int unitQuant, float unitValue, int totalWeight, int totalVol) {
         this.desc = desc;
         this.unitQuant = unitQuant;
         this.unitValue = unitValue;

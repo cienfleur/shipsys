@@ -59,6 +59,32 @@ public class ShipSysAPI {
         portView.getItems().clear();
     }
 
+    public int getTotalValue() {
+        int totalValue = 0;
+        for(int i=0; i<ports.getLength(); i++) {
+            totalValue += ports.accessIndex(i).getPortValue();
+        }
+        return totalValue;
+    }
+
+    public int getPortValue() {
+        int portValue = 0;
+        for(int i=0; i<ports.getLength(); i++) {
+            portValue += ports.accessIndex(i).getTotalValue();
+        }
+        return portValue;
+    }
+
+    public Pallet searchPallets(String palletDesc) {
+        Pallet pallet = null;
+        for(int i=0; i<ports.getLength(); i++) {
+            pallet = pallets.accessIndex(i);
+            if (pallets.accessIndex(i).getPalletDesc().equals(palletDesc)) {
+                return pallet
+            }
+        }
+    }
+
     public void initialize() {
         try {
             load();

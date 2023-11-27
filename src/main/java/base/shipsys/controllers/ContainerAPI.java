@@ -29,7 +29,7 @@ public class ContainerAPI {
     //additional field for saving and loading
     private Container head;
 
-    public void addContainer(String contID, int length) {
+    public void addContainer(int contID, int length) {
         Container newContainer = new Container(contID, length);
         containers.addElement(newContainer);
         populateList();
@@ -38,7 +38,7 @@ public class ContainerAPI {
     public void populateList() {
         containerView.getItems().clear();
         for(int i=0; i<containers.getLength(); i++) {
-            System.out.println(containers.accessIndex(i).getContainerID());
+            System.out.println(containers.accessIndex(i).getContID());
             containerView.getItems().add(containers.accessIndex(i));
         }
     }
