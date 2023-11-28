@@ -1,12 +1,18 @@
 package base.shipsys.models;
 
+import base.shipsys.utils.ScratchList;
+
 public class Port {
 
     private String portName="";
     private String portCode="0000";
     private String country="";
 
+    private ScratchList<ContainerShip> ships;
+
     public Port(String portName, String portCode, String country) {
+        ships = new ScratchList<ContainerShip>();
+        addShip(new ContainerShip("Shore", 1, "N/A", "N/A"));
         this.portName = portName;
         this.portCode = portCode;
         this.country = country;
@@ -34,6 +40,25 @@ public class Port {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public void addShip(ContainerShip ship) {
+        ships.addElement(ship);
+    }
+
+    public void removeShip(int index) {
+        ships.removeElement(index);
+    }
+
+    public ScratchList<ContainerShip> getShips() {
+        return ships;
+    }
+    public int totalValue() {
+        int total = 0;
+        for (ContainerShip ship: ships) {
+            total += ship.totalValue();
+        }
+        return total;
     }
 
     @Override

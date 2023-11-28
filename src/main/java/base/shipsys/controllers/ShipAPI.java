@@ -61,6 +61,24 @@ public class ShipAPI {
         shipView.getItems().clear();
     }
 
+    public void dockShip(ActionEvent dockShipEvent) {
+        if (ships.getLength() > 0) {
+            ContainerShip temp = ships.accessIndex(ships.getLength() - 1);
+            ships.removeElement(ships.getLength() - 1);
+            populateList();
+            Main.primaryStage.setScene(Main.scene2);
+        }
+    }
+
+    public void shipToSea(ActionEvent shipToSeaEvent) {
+        if (ships.getLength() > 0) {
+            ContainerShip temp = ships.accessIndex(ships.getLength() - 1);
+            ships.removeElement(ships.getLength() - 1);
+            populateList();
+            Main.primaryStage.setScene(Main.scene2);
+        }
+    }
+
     public void changeScene1(ActionEvent createShip) {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("shipMenu.fxml"));
         Scene scene1 = null;

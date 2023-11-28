@@ -1,5 +1,7 @@
 package base.shipsys.models;
 
+import base.shipsys.utils.ScratchList;
+
 public class ContainerShip {
 
     private String shipName="";
@@ -7,7 +9,10 @@ public class ContainerShip {
     private String shipCountry="";
     private String shipURL="";
 
+    private ScratchList<Container> containers;
+
     public ContainerShip(String shipName, int shipIMO, String shipCountry, String shipURL) {
+        containers = new ScratchList<Container>();
         this.shipName = shipName;
         this.shipIMO = shipIMO;
         this.shipCountry = shipCountry;
@@ -46,6 +51,25 @@ public class ContainerShip {
         return shipName;
     }
 
+    public void addContainer(Container container) {
+        containers.addElement(container);
+    }
+
+    public void removeContainer(int index) {
+        containers.removeElement(index);
+    }
+
+    public ScratchList<Container> getContainers() {
+        return containers;
+    }
+
+    public int totalValue() {
+        int total = 0;
+        for (Container container: containers) {
+            total += container.totalValue();
+        }
+        return total;
+    }
     @Override
     public String toString() {
         return "ContainerShip{" +

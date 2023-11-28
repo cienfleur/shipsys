@@ -26,8 +26,6 @@ public class ContainerAPI {
     private ScratchList<Container> containers;
     private ListView<Container> containerView;
 
-    //additional field for saving and loading
-    private Container head;
 
     public void addContainer(int contID, int length) {
         Container newContainer = new Container(contID, length);
@@ -44,7 +42,7 @@ public class ContainerAPI {
     }
 
     public void addContainerToView(ActionEvent addContainerEvent) {
-        addContainer(contID.getText(), contLength.getValue());
+        addContainer(Integer.parseInt(contID.getText()), contLength.getValue());
     }
 
     public void deleteContainer(ActionEvent deleteContainerEvent) {

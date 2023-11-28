@@ -56,6 +56,10 @@ public class Pallet {
         this.totalVol = totalVol;
     }
 
+    public int getValue() {
+        return (int) (unitValue * unitQuant);
+    }
+
     @Override
     public String toString() {
         return "Pallet{" +
