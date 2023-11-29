@@ -35,7 +35,11 @@
                   <Insets top="33.0" />
                </FlowPane.margin>
             </VBox>
+            <TextField fx:id="search" promptText="Search pallets" />
          </children>
       </FlowPane>
    </top>
+   <bottom>
+      <ListView fx:id="searchListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>

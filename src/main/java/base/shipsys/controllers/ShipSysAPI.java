@@ -138,6 +138,15 @@ public class ShipSysAPI {
         shipView.getItems().clear();
     }
 
+    public void shipToSea(ActionEvent shipToSeaEvent) {
+        selectedShip = shipView.getSelectionModel().getSelectedItem();
+        selectedPort.removeShip(selectedShip.getIndexOf());
+        selectedShip.setPortCode("0000");
+        selectedPort = ports.accessIndex(0);
+        selectedPort.addShip(selectedShip);
+        populateShipList();
+    }
+
     public void selectShip(MouseEvent selectShipEvent) {
         selectedShip = shipView.getSelectionModel().getSelectedItem();
         System.out.println(selectedShip.getShipIMO());
@@ -171,6 +180,15 @@ public class ShipSysAPI {
             containers.removeElement(containers.getLength() - 1);
             populateContainerList();
         }
+    }
+
+    public void containerToShore(ActionEvent containerToShoreEvent) {
+        selectedContainer = containerView.getSelectionModel().getSelectedItem();
+        selectedShip.removeContainer(selectedContainer.getIndexOf());
+        selectedContainer.setShipIMO(1);
+        selectedShip = selectedPort.ships.accessIndex(0);
+        selectedShip.addContainer(selectedContainer);
+        populateContainerList();
     }
 
     public void selectContainer(MouseEvent selectContainerEvent) {
