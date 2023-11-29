@@ -16,21 +16,22 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        primaryStage=stage;
+        primaryStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ports.fxml"));
         scene1 = new Scene(fxmlLoader.load(), 500, 250);
         stage.setTitle("Shipping System");
         stage.setScene(scene1);
         stage.show();
-
         fxmlLoader = new FXMLLoader(Main.class.getResource("containerShip.fxml"));
         scene2 = new Scene(fxmlLoader.load(), 500, 250);
-
+/*
         fxmlLoader = new FXMLLoader(Main.class.getResource("container.fxml"));
         scene3 = new Scene(fxmlLoader.load(), 500, 250);
 
         fxmlLoader = new FXMLLoader(Main.class.getResource("pallet.fxml"));
         scene4 = new Scene(fxmlLoader.load(), 500, 250);
+    }
+    */
     }
 
     public static void main(String[] args) {

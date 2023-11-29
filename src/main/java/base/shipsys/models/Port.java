@@ -3,7 +3,6 @@ package base.shipsys.models;
 import base.shipsys.utils.ScratchList;
 
 public class Port {
-
     private String portName="";
     private String portCode="0000";
     private String country="";
@@ -12,7 +11,6 @@ public class Port {
 
     public Port(String portName, String portCode, String country) {
         ships = new ScratchList<ContainerShip>();
-        addShip(new ContainerShip("Shore", 1, "N/A", "N/A"));
         this.portName = portName;
         this.portCode = portCode;
         this.country = country;
@@ -63,10 +61,8 @@ public class Port {
 
     @Override
     public String toString() {
-        return "Port{" +
-                "portName='" + portName + '\'' +
-                ", portCode='" + portCode + '\'' +
-                ", country='" + country + '\'' +
-                '}';
+        return "Name= " + portName +
+                ",Code= " + portCode +
+                ", Country= " + country;
     }
 }

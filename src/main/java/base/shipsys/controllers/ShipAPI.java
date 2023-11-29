@@ -1,3 +1,4 @@
+/*
 package base.shipsys.controllers;
 
 import base.shipsys.Main;
@@ -32,12 +33,13 @@ public class ShipAPI {
     private ContainerShip head;
 
     public void addContainerShip(String name, int IMO, String flag, String URL) {
-        ContainerShip newShip = new ContainerShip(name, IMO, flag, URL);
-        ships.addElement(newShip);
+        //ContainerShip newShip = new ContainerShip(Controller.selectedPort, name, IMO, flag, URL);
+        //ships.addElement(newShip);
         populateList();
     }
 
     public void populateList() {
+
         shipView.getItems().clear();
         for(int i=0; i<ships.getLength(); i++) {
             System.out.println(ships.accessIndex(i).getShipIMO());
@@ -61,23 +63,6 @@ public class ShipAPI {
         shipView.getItems().clear();
     }
 
-    public void dockShip(ActionEvent dockShipEvent) {
-        if (ships.getLength() > 0) {
-            ContainerShip temp = ships.accessIndex(ships.getLength() - 1);
-            ships.removeElement(ships.getLength() - 1);
-            populateList();
-            Main.primaryStage.setScene(Main.scene2);
-        }
-    }
-
-    public void shipToSea(ActionEvent shipToSeaEvent) {
-        if (ships.getLength() > 0) {
-            ContainerShip temp = ships.accessIndex(ships.getLength() - 1);
-            ships.removeElement(ships.getLength() - 1);
-            populateList();
-            Main.primaryStage.setScene(Main.scene2);
-        }
-    }
 
     public void changeScene1(ActionEvent createShip) {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("shipMenu.fxml"));
@@ -108,5 +93,8 @@ public class ShipAPI {
         ObjectInputStream is = xstream.createObjectInputStream(new FileReader("ships.xml"));
         ships = (ScratchList<ContainerShip>) is.readObject();
         is.close();
+        populateList();
     }
 }
+
+ */

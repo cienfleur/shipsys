@@ -60,6 +60,10 @@ public class Pallet {
         return (int) (unitValue * unitQuant);
     }
 
+    public int getIndexOf() {
+        return this.hashCode();
+    }
+
     @Override
     public String toString() {
         return "Pallet{" +

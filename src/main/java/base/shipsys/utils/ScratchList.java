@@ -6,7 +6,7 @@ public class ScratchList<T> implements Iterable<T> {
 
     //implement linked list
     public ScratchNode<T> head=null;
-    private int length=0;
+    public int length=0;
 
     public void addElement(T n) {
         ScratchNode<T> tn=new ScratchNode<>();
