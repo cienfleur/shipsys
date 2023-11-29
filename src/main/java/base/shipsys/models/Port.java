@@ -7,7 +7,7 @@ public class Port {
     private String portCode="0000";
     private String country="";
 
-    private ScratchList<ContainerShip> ships;
+    public ScratchList<ContainerShip> ships;
 
     public Port(String portName, String portCode, String country) {
         ships = new ScratchList<ContainerShip>();

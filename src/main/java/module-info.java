@@ -3,6 +3,7 @@ module base.shipsys {
     requires javafx.fxml;
     requires xstream;
     exports base.shipsys.models;
+    exports base.shipsys.utils;
 
     opens base.shipsys.models to xstream;
     opens base.shipsys.utils to xstream;

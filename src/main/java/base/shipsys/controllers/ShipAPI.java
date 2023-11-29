@@ -31,6 +31,7 @@ public class ShipAPI {
 
     //additional field for saving and loading
     private ContainerShip head;
+    public Port selectedPort = ShipSysAPI.selectedPort;
 
     public void addContainerShip(String name, int IMO, String flag, String URL) {
         //ContainerShip newShip = new ContainerShip(Controller.selectedPort, name, IMO, flag, URL);
@@ -96,5 +97,7 @@ public class ShipAPI {
         populateList();
     }
 }
+
+
 
  */

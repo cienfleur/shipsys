@@ -49,10 +49,10 @@ public class ShipSysAPI {
     private ListView<Pallet> palletView;
 
     // fields to handle drill down menu view
-    public Port selectedPort;
-    public ContainerShip selectedShip;
-    public Container selectedContainer;
-    public Pallet selectedPallet;
+    public static Port selectedPort;
+    public static ContainerShip selectedShip;
+    public static Container selectedContainer;
+    public static Pallet selectedPallet;
 
     public void addPort(String portName, String portCode, String portCountry) {
         Port newPort = new Port(portName, portCode, portCountry);
@@ -115,14 +115,14 @@ public class ShipSysAPI {
 
     public void populateShipList() {
         shipView.getItems().clear();
-        for(int i=0; i<ships.getLength(); i++) {
-            System.out.println(ships.accessIndex(i).getShipIMO());
-            shipView.getItems().add(ships.accessIndex(i));
+        for(int i=0; i<selectedPort.ships.getLength(); i++) {
+            System.out.println(selectedPort.ships.accessIndex(i).getShipIMO());
+            shipView.getItems().add(selectedPort.ships.accessIndex(i));
         }
     }
 
     public void addShipToView(ActionEvent addShipEvent) {
-        //System.out.println("selected port: " + selectedPort.getPortCode());
+        System.out.println("selected port: " + selectedPort.getPortCode());
         addContainerShip(shipName.getText(), Integer.parseInt(shipIMO.getText()), shipCountry.getText(), shipURL.getText());
     }
 
@@ -255,7 +255,6 @@ public class ShipSysAPI {
             Port sea = new Port("Sea", "0000", "Sea");
             ports.addElement(sea);
         }
-        contLength.getItems().addAll(10, 20, 40);
         try {
             load();
         } catch (Exception e) {

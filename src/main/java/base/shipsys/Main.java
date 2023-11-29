@@ -24,14 +24,14 @@ public class Main extends Application {
         stage.show();
         fxmlLoader = new FXMLLoader(Main.class.getResource("containerShip.fxml"));
         scene2 = new Scene(fxmlLoader.load(), 500, 250);
-/*
+
         fxmlLoader = new FXMLLoader(Main.class.getResource("container.fxml"));
         scene3 = new Scene(fxmlLoader.load(), 500, 250);
-
+/*
         fxmlLoader = new FXMLLoader(Main.class.getResource("pallet.fxml"));
         scene4 = new Scene(fxmlLoader.load(), 500, 250);
-    }
-    */
+        */
+
     }
 
     public static void main(String[] args) {
